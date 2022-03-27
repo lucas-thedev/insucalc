@@ -24,7 +24,7 @@
     </div>
     <div style="display: flex;">
       <div class="calc-wrapper">
-        <p id="calc-result">15</p>
+        <p id="calc-result">-</p>
       </div>
       <div id="calc-un">un.</div>
     </div>
@@ -38,11 +38,21 @@
     </div>
     <div>
       <label>Refeição</label>
-      <div>
-        <div>
-          <span class="material-icons">local_cafe</span>
-        </div>
+    </div>
+    <div style="width: 70%; margin-top: -30px;">
+      <div style="display: flex; justify-content: space-between; width: 100%;">
+        <span onclick="getRefeicao('cafe')" class="material-icons" style="margin: 0 5px; color: white">local_cafe</span>
+        <span onclick="getRefeicao('almoco')" class="material-icons" style="margin: 0 5px; color: white">restaurant</span>
+        <span onclick="getRefeicao('lanche')" class="material-icons" style="margin: 0 5px; color: white">lunch_dining</span>
+        <span onclick="getRefeicao('janta')" class="material-icons" style="margin: 0 5px; color: white">local_bar</span>
+        <span onclick="getRefeicao('extra')" class="material-icons" style="margin: 0 15px; color: white">loupe</span>
       </div>
     </div>
+    <button onclick="calcInsulin()">Salvar</button>
+    <div style="margin-left: 55%">
+      <span class="title" style="font-size: 25px; vertical-align: top;">Config</span>
+      <span class="material-icons" style="padding-top: 3px; color: #cbe49a">arrow_forward_ios</span>
+    </div>
   </div>
+  <script src="scripts.js"></script>
 </body>
