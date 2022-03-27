@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <head>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <meta name="theme-color" content="#222831">
+  <meta name="theme-color" content="#cbe49a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <link rel='manifest' href='./manifest.json'>
 
   <script>
@@ -11,10 +17,32 @@
   </script>
 </head>
 <body>
-  <div class="hero">
-    <h1>Temporas</h1>
-    <h2>Take your medicine my friend</h2>
-    <div id="status"></div>
-    <button id="unsubscribe">unsubscribe</button>
+  <div class="wrapper">
+    <div>
+      <span class="logo">+</span>
+      <h1 class="title">InsulCalc</h1>
+    </div>
+    <div style="display: flex;">
+      <div class="calc-wrapper">
+        <p id="calc-result">15</p>
+      </div>
+      <div id="calc-un">un.</div>
+    </div>
+    <div>
+      <label>Carboidratos</label>
+      <input type="text" id="carboidratos" />
+    </div>
+    <div>
+      <label>Glicemia</label>
+      <input type="text" id="glicemia" />
+    </div>
+    <div>
+      <label>Refeição</label>
+      <div>
+        <div>
+          <span class="material-icons">local_cafe</span>
+        </div>
+      </div>
+    </div>
   </div>
 </body>

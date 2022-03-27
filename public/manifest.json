@@ -1,10 +1,21 @@
 {
-  "name": "Temporas",
-  "short_name": "Temporas",
-  "theme_color": "#222831",
-  "background_color": "#ffad17",
+  "name": "InsulCalc",
+  "short_name": "IC",
+  "theme_color": "#cbe49a",
+  "background_color": "#131313",
   "display": "standalone",
   "Scope": "",
   "start_url": "/index.html",
-  "icons": []
+  "icons": [
+    {
+        "src": "assets/logo-198.jpg",
+        "sizes": "198x198",
+        "type": "image/jpg"
+    },
+    {
+        "src": "assets/logo-512.png",
+        "sizes": "512x512",
+        "type": "imagens/png"
+    }
+]
 }
