@@ -7,6 +7,7 @@ let fatorCarboidrato = {
     extra: 8
 }
 let selectedRefeicao = fatorCarboidrato.extra;
+let selectedConfigRefeicao = 'extra';
 
 function getGlicemia () {
     return document.getElementById('glicemia').value;
@@ -14,6 +15,14 @@ function getGlicemia () {
 
 function getCarboidratos () {
     return document.getElementById('carboidratos').value;
+}
+
+function getGlicemiaConfig () {
+    return document.getElementById('glicemia-config').value;
+}
+
+function getCarboidratosConfig () {
+    return document.getElementById('carboidratos-config').value;
 }
 
 function getRefeicao (refeicao) {
@@ -27,6 +36,33 @@ function getRefeicao (refeicao) {
     }
 
     selectedRefeicao = result
+    setElementSelected(refeicao)
+
+}
+
+function setElementSelected (refeicao) {
+    let refeicoes = ['cafe', 'almoco', 'lanche', 'janta', 'extra']
+    refeicoes.forEach((item) => {
+        document.getElementById(item).classList.remove('active')
+    })
+
+    document.getElementById(refeicao).classList.add('active')
+
+}
+
+function setElementSelected2 (refeicao) {
+    let refeicoes = ['cafe2', 'almoco2', 'lanche2', 'janta2', 'extra2']
+    refeicoes.forEach((item) => {
+        document.getElementById(item).classList.remove('active')
+    })
+
+    document.getElementById(refeicao).classList.add('active')
+
+}
+
+function configRefeicao (refeicao) {
+    selectedConfigRefeicao = refeicao
+    setElementSelected2(refeicao + "2")
 }
 
 function calcGlicemia(glicemia) {
@@ -44,6 +80,29 @@ function calcInsulin() {
     const glicemia = +getGlicemia()
     const carboidratos = +getCarboidratos()
     const result = calcGlicemia(glicemia) + calcCarboidrato(carboidratos, selectedRefeicao)
-    console.log(selectedRefeicao)
     document.getElementById('calc-result').innerHTML = result.toString()
 }
+
+function configInsulin() {
+    if (getCarboidratosConfig())
+    fatorCarboidrato[selectedConfigRefeicao] = +getCarboidratosConfig()
+
+    if (getGlicemiaConfig())
+    fatorGlicemia = +getGlicemiaConfig()
+}
+
+function selectTab(tab) {
+    let firstpage = document.getElementById('first-page');
+    let secondpage = document.getElementById('second-page');
+
+    if (tab === 1) { 
+        firstpage.style.display = 'flex';
+        secondpage.style.display = 'none';
+    } else {
+        firstpage.style.display = 'none';
+        secondpage.style.display = 'flex';
+    }
+}
+
+
+

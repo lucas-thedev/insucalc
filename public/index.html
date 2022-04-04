@@ -17,7 +17,7 @@
   </script>
 </head>
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id="first-page" style="display: flex;">
     <div>
       <span class="logo">+</span>
       <h1 class="title">InsulCalc</h1>
@@ -41,18 +41,46 @@
     </div>
     <div style="width: 70%; margin-top: -30px;">
       <div style="display: flex; justify-content: space-between; width: 100%;">
-        <span onclick="getRefeicao('cafe')" class="material-icons" style="margin: 0 5px; color: white">local_cafe</span>
-        <span onclick="getRefeicao('almoco')" class="material-icons" style="margin: 0 5px; color: white">restaurant</span>
-        <span onclick="getRefeicao('lanche')" class="material-icons" style="margin: 0 5px; color: white">lunch_dining</span>
-        <span onclick="getRefeicao('janta')" class="material-icons" style="margin: 0 5px; color: white">local_bar</span>
-        <span onclick="getRefeicao('extra')" class="material-icons" style="margin: 0 15px; color: white">loupe</span>
+        <span onclick="getRefeicao('cafe')" class="material-icons" id="cafe" style="margin: 0 5px; color: white">local_cafe</span>
+        <span onclick="getRefeicao('almoco')" class="material-icons" id="almoco" style="margin: 0 5px; color: white">restaurant</span>
+        <span onclick="getRefeicao('lanche')" class="material-icons" id="lanche" style="margin: 0 5px; color: white">lunch_dining</span>
+        <span onclick="getRefeicao('janta')" class="material-icons" id="janta" style="margin: 0 5px; color: white">local_bar</span>
+        <span onclick="getRefeicao('extra')" class="material-icons" id="extra" style="margin: 0 15px; color: white">loupe</span>
       </div>
     </div>
     <button onclick="calcInsulin()">Salvar</button>
-    <div style="margin-left: 55%">
+    <div style="margin-left: 55%" onclick="selectTab(2)">
       <span class="title" style="font-size: 25px; vertical-align: top;">Config</span>
       <span class="material-icons" style="padding-top: 3px; color: #cbe49a">arrow_forward_ios</span>
     </div>
+  </div>
+
+  <div class="wrapper" id="second-page" style="display: none;">
+    <div style="margin-left: -55%" onclick="selectTab(1)">
+      <span class="material-icons" style="padding-top: 3px; color: #cbe49a">arrow_back_ios</span>
+      <span class="title" style="font-size: 25px; vertical-align: top;">Voltar</span>
+    </div>
+    <div>
+      <label>Refeição</label>
+    </div>
+    <div style="width: 70%; margin-top: -30px;">
+      <div style="display: flex; justify-content: space-between; width: 100%;">
+        <span onclick="configRefeicao('cafe')" class="material-icons" id="cafe2" style="margin: 0 5px; color: white">local_cafe</span>
+        <span onclick="configRefeicao('almoco')" class="material-icons" id="almoco2" style="margin: 0 5px; color: white">restaurant</span>
+        <span onclick="configRefeicao('lanche')" class="material-icons" id="lanche2" style="margin: 0 5px; color: white">lunch_dining</span>
+        <span onclick="configRefeicao('janta')" class="material-icons" id="janta2" style="margin: 0 5px; color: white">local_bar</span>
+        <span onclick="configRefeicao('extra')" class="material-icons" id="extra2" style="margin: 0 15px; color: white">loupe</span>
+      </div>
+    </div>
+    <div>
+      <label>Carboidratos</label>
+      <input type="text" id="carboidratos-config" />
+    </div>
+    <div>
+      <label>Glicemia</label>
+      <input type="text" id="glicemia-config" />
+    </div>
+    <button onclick="configInsulin()">Salvar</button>
   </div>
   <script src="scripts.js"></script>
 </body>

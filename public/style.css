@@ -69,5 +69,20 @@ label {
     display: block;
 }
 
-input {
+button {
+    border: none;
+    background-color: #cbe49a;
+    width: 70%;
+    height: 45px;
+    color: #131313;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    padding-top: 3px;
+}
+
+
+.active {
+    border: 2px solid #cbe49a;
+    border-radius: 50%;
+    padding: 5px;
 }
